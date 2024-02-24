@@ -26,29 +26,49 @@ class User {
     }
 }
 
-
+const url = "127.0.0.1:5500/home.html/"
+var m =""
 
 $(function(){
     $.get("https://jsonplaceholder.typicode.com/users",function( data){
            data.forEach(element => {
            var user = new User(element.id,element.name,element.username,element.email)
-            $("#ul_name_contatc").append(
-                ` <li class="list-group-item d-flex justify-content-between align-items-center" id="li-user">
-                <a id="li-user" href="#">${user.name}</a>
-                <span class="badge bg-primary rounded-pill">${user.id}</span> `
-            )
+               createLiUser(user)
            });
 
     }).catch((e)=>{
           console.log(e.status)
     })
    
-     $("#li-user").click(function(){
-          console.log("clicou")
-          $("#lis").toggle('active')
-     }) ;
+    
+    $("li").click(function(){
+         $(this).toggleClass("active")
+         if ($(this).hasClass('active')) {
+            $('#li-user').css( "color" , "white" );
+         } else {
+            $('#li-user').css( "color" , "blue" );
+         }
+
+        
+      }
+    )
+
 })
 
 
+function createLiUser(user){
+    $("#ul_name_contatc").append(
+        `<li class="list-group-item d-flex justify-content-between align-items-center" id="li-user">
+        <a id="li-user" href=# onclick=getUser(${user.id}) >${user.name}</a>
+        <span class="badge bg-primary rounded-pill">${user.id}</span>`
+    )
+}
+
+function getUser(user){
+       console.log(user)
+       m = user;
+       $('#contactName').text(user)
+    
+}
 
 
