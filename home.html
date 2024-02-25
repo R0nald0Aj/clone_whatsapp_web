@@ -37,19 +37,26 @@
                      </div>
 
                     <div class="p-2 border h-75">
-                         <ul class="">
-                            <li class="border w-75 rounded p-2 list-group-item float-start">oi</li>
-                            <li class="border w-75 mt-3 list-group-item rounded p-2 float-end" >oi</li>
+                         <ul id="ul_messeger">
+                            <li id="list_messeger" class="border w-75 rounded p-2 list-group-item float-start">oi</li>
+                            <li class="border w-75 my-3 list-group-item rounded p-2 float-end" >oi</li>
                          </ul>
                     </div>
-                    <div>
-                        <button type="button" id="btn-call" class="btn btn-success" >Chamaar </button>
+                    <div class="input-group mb-3 w-100">
+                        <input id="input_messager" type="text" class="form-control" placeholder="Escreva uma menssagem..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-success" type="button"  id="bt_send_messager">Send</button>
                     </div>
+                    
             </div>
         </div>
+
+        
+            
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="script/jquery/Jquery.js"></script>
+
     <script src="script/home_controller.js"></script>
+    <script src="model/RepositoryUser.js"></script>
 </body>
 </html>

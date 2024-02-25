@@ -1,16 +1,7 @@
- class Post{
-    userId = ""; 
-    id;
-    title;
-    body;
 
-    constructor(nome,id,title,body){
-        this.userId =id;
-        this.id =id;
-        this.title= title;
-        this.body = body;
-    }
-}
+
+const url = "127.0.0.1:5500/home.html/"
+var m =""
 
 class User {
     id ="";
@@ -26,10 +17,9 @@ class User {
     }
 }
 
-const url = "127.0.0.1:5500/home.html/"
-var m =""
 
 $(function(){
+    
     $.get("https://jsonplaceholder.typicode.com/users",function( data){
            data.forEach(element => {
            var user = new User(element.id,element.name,element.username,element.email)
@@ -48,27 +38,62 @@ $(function(){
          } else {
             $('#li-user').css( "color" , "blue" );
          }
-
-        
       }
     )
+
+    $('#bt_send_messager').click(()=>{
+        var  myMessager = $('#input_messager').val()
+         
+         if(myMessager.trim().length  != 0){
+            $('#ul_messeger').append(`
+            <li id="list_messeger" class="border w-75 rounded p-2 list-group-item float-start">${myMessager}</li>`
+         )
+         myMessager = ""
+         $('#input_messager').val()
+         console.log(myMessager)
+         }else{
+            alert("Digite uma mensagem valida")
+         }
+    })
 
 })
 
 
+
+
 function createLiUser(user){
+    const userJson = JSON.stringify(user)
     $("#ul_name_contatc").append(
-        `<li class="list-group-item d-flex justify-content-between align-items-center" id="li-user">
-        <a id="li-user" href=# onclick=getUser(${user.id}) >${user.name}</a>
-        <span class="badge bg-primary rounded-pill">${user.id}</span>`
+        `
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="li-user">
+            <a id="li-user" href="#"onclick='getUser(${userJson})'>${user.name}</a>
+            <span class="badge bg-primary rounded-pill">${user.id}</span>            
+        `
     )
 }
 
 function getUser(user){
-       console.log(user)
-       m = user;
-       $('#contactName').text(user)
-    
+       console.log(user.id)
+       $('#contactName').text(user.name)
 }
 
+
+
+
+ 
+
+    function sendMessager(){ 
+        var  myMessager = $('#input_messager').val()
+         
+         if(myMessager.trim().length  != 0){
+            $('#ul_messeger').append(`
+            <li id="list_messeger" class="border w-75 rounded p-2 list-group-item float-start">${myMessager}</li>`
+         )
+         myMessager = ""
+         $('#input_messager').val("")
+         console.log(myMessager)
+         }
+        
+ }  
+    
 
