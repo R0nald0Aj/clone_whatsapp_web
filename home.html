@@ -16,16 +16,17 @@
                     <img src="assets/logo .png" class="w-25  img-fluid rounded bg-secondary" alt="">
                     <p  id="name_user">Nome usuario</p>
                 </div>
-                <div class="col-md-10 w-100">
+                <div class="col-md-10 w-100 overflow-auto">
                     <ul class="list-group" id="ul_name_contatc">
-                        <li class="list-group-item d-flex  justify-content-between align-items-center" id="lis">
+                        <li class="list-group-item d-flex  justify-content-between align-items-center" 
+                        id="lis">
                           <a id="li-user"  href="#"> A list item</a>
                           <span class="badge bg-primary rounded-pill">14</span>
                         </li>
                     </ul>
                 </div>
              </div>
-            <div class="col-md-8">
+            <div class="col-md-8  h-100">
                      <div class="d-flex border row">
                         <div class=" bg-secondary col-2">
                             <img src="assets/logo .png" class="w-100 h-100 img-fluid rounded bg-secondary" alt="">
@@ -36,8 +37,8 @@
                         </div>
                      </div>
 
-                    <div class="p-2 border h-75">
-                         <ul id="ul_messeger">
+                    <div class="p-2 border overflow-auto h-75">
+                         <ul id="ul_messeger" class=" h-75"> 
                             <li id="list_messeger" class="border w-75 rounded p-2 list-group-item float-start">oi</li>
                             <li class="border w-75 my-3 list-group-item rounded p-2 float-end" >oi</li>
                          </ul>
@@ -55,8 +56,9 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="script/jquery/Jquery.js"></script>
-
     <script src="script/home_controller.js"></script>
-    <script src="model/RepositoryUser.js"></script>
+    <script src="model/user.js"></script>
+    <script src="model/Conversa.js"></script>
+    <script src="model/message.js"></script>
 </body>
 </html>

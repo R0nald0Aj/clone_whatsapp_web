@@ -10,11 +10,11 @@
 <body class=" container pt-3">
     <div class="row shadow p-3  m-auto bg-body-tertiary rounded">
           <div class="col-md-7 bg-success bg-gradient d-flex flex-column text-center">
-               <img src="assets/logo .png"  class="img-fluid p-5 " alt="" >
+               <img src="assets/logo .png"  class="img-fluid p-5 tex " alt="" >
           </div>
           <div class="col-md-5  border py-5">
                <h3 class=" text-center">Faça o Login com suas Credenciais</h3>
-               <form class="p-5"  id="login_form" action="home.html">
+               <form class="p-5" onsubmit="validateFields('email','password')" action="home.html" id="login_form" >
                     <label for="email" class="form-label">Email</label>
                     <input 
                         type="email" 
@@ -23,7 +23,8 @@
                         placeholder="email@email.com"
                         required   
                     >
-                    
+         
+    
                     <label for="password" class="form-label">Password</label>
                     <input 
                        type="password" 
@@ -33,11 +34,13 @@
                         required
                        ria-describedby="passwordhelp"
                     > 
-                    <div id="passwordhelp" class="form-text">
+                    <div 
+                      id="passwordhelp" 
+                      class="form-text">
                         <span>Senha deve conter mais de 5 caracteres</span>
                     </div>
                     <br>
-                    <button type="submit" src class="btn btn-success text-sm-center">Login</button>
+                    <button id="btn-login" class="btn btn-success text-sm-center">Login</button>
                </form>
              
                <div class="text-center">
