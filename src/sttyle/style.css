@@ -1,0 +1,25 @@
+.bg-gradient{
+    background-image: linear-gradient(
+        rgba(000,000,000,1.0),
+        rgba(255,255,255,1.0)
+    )
+    
+}
+
+.t{
+    background-image: url(../assets/bg.png)
+}
+
+.bg-loading {
+    background-color: rgba(75, 71, 70, 0.7) !important;
+}
+
+
+.container_user_data{
+    height: 13%;
+    background-color: #EEEEEE;
+}
+.container_conversation{
+    
+    background-color: #E7DFDC;
+}

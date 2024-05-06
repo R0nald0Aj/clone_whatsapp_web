@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="sttyle/style.css" rel="stylesheet" >
+    <title>WhastApp</title>
+</head>
+<body >
+   <div class="row shadow p-4  container m-auto bg-body-tertiary rounded">
+    <div class="col-md-7 bg-success d-flex flex-column text-center">
+         <img src="assets/logo .png"  class="img-fluid p-5 tex " alt="" >
+    </div>
+    <div class="col-md-5  border py-5">
+         <h3 class=" text-center">Faça o Login com suas Credenciais</h3>
+         <form class="p-5" onsubmit="validateFields('email','password')" action="home.html" id="login_form" >
+              <label for="email" class="form-label">Email</label>
+              <input 
+                  type="email" 
+                  class="form-control" 
+                  id="email" 
+                  placeholder="email@email.com"
+                  required   
+              >
+   
+
+              <label for="password" class="form-label">Password</label>
+              <input 
+                 type="password" 
+                 class="form-control" 
+                 id="password" 
+                 placeholder="senha" 
+                  required
+                 ria-describedby="passwordhelp"
+              > 
+              <div 
+                id="passwordhelp" 
+                class="form-text">
+                  <span>Senha deve conter mais de 5 caracteres</span>
+              </div>
+              <br>
+         </form>
+         <button id="btn-login" class="btn btn-success text-sm-center">Login</button>
+       
+         <div class="text-center">
+             <p class="lead fs-6">
+                Não tem conta?
+                <a id="cadastrasse_link" href="cadastro.html">Cadastre-se</button>
+              </p>
+         </div>
+    </div>
+
+</div>
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script/jquery/Jquery.js"></script>
+    <script src="loading.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script >
+          const firebaseConfig = {
+     apiKey: "AIzaSyBWW_0iM_Ace5w3GKzU1Q9D4YNbgawNL6I",
+     authDomain: "whats-app-clone-a2c50.firebaseapp.com",
+     projectId: "whats-app-clone-a2c50",
+     storageBucket: "whats-app-clone-a2c50.appspot.com",
+     messagingSenderId: "518737294596",
+     appId: "1:518737294596:web:8b672a67645f5b1804cc51"
+     };
+
+     // Initialize Firebase
+     firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="loading.js"></script>
+    <script src="script/login_controller.js"></script>
+<!--     
+    <script src="model/user.js"></script>
+    <script type="module" src="service/ServiceAuth.js"></script>
+
+      -->
+</body>
+</html>

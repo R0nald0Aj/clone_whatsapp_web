@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link href="sttyle/style.css" rel="stylesheet" />
+    <title>home</title>
+  </head>
+  
+  <body>
+    <div class="container  vh-100 p-2">
+      <div class="row h-100 " > 
+        <div class="col-md-4 d-flex flex-column  justify-content-between border h-100" style="padding: 0px;">
+
+          <div class="container_user_data_and_list_conversation h-100">
+            <div class="container_user_data col-md-2 w-100  d-flex  border">
+              <div class="d-flex align-items-center  col-8 p-3">
+                <img
+                  src="assets/logo .png"
+                  class="bg-secondary img-thumbnail w-25 rounded-circle"
+                  alt=""
+                />
+                <p class="mx-2" id="name_user">Nome usuario</p>
+              </div>
+              <div class="d-flex text justify-content-around container-fluid align-items-center col-4 p-4 ">
+                 <button class="rounded-circle ">
+                    <i class="bi bi-filter-circle"></i>
+                  </button>
+                  <button class="rounded-circle" id="btn-addreessbook">
+                    <i class="bi bi-journal-text"></i>
+                  </button>
+              </div>
+            </div>
+           
+            <div>
+              <h3 id="title_list" class="text-center p-2  fs-5 border-top">Conversas</h3>
+              <hr class="bg-secondary">
+            </div>
+            
+            <div class=" w-100 overflow-auto">
+              <ul class="list-group" id="ul_name_contatc">
+                <li
+                  class="lis list-group-item d-flex justify-content-between align-items-center"
+                  onclick="getId(-1)"
+                 >
+                  <a id="li-user" href="#"> A list item</a>
+                  <span class="badge bg-primary rounded-pill">14</span>
+                </li>
+              </ul>
+            </div>
+           
+          </div>
+          <div class="p-3">
+            <button type="text" id="btn_sair" class="btn btn-danger w-100">
+              Deslogar
+            </button>
+          </div>
+  
+        
+        </div>
+        <div class="col-md-8  h-100  d-flex flex-column " style="padding: 0px;">
+            <div class="border d-flex container_user_data align-items-center" >
+              <div class=" ms-2 p-3 col-2  w-md-25">
+                  <img
+                    src="assets/logo .png"
+                    class="bg-secondary img-thumbnail w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="col-10">
+                  <p id="contactName" class=" fw-bold bg-primary w-50  ">Nome contato</p>
+                  <span class="fw-light bg-primary " style="width: 20%;">online</span>
+                </div>
+            </div>
+
+          <div class="container_conversation p-2 border overflow-auto h-100">
+            <ul id="ul_messeger" class="h-75">
+              <div class="rounded-2  w-75 float-start" style="background-color: #FFFFFF;">
+                  <li id="list_messeger"class="border   p-2 list-group-item ">
+                    oi
+                  </li>
+              </div>
+              <div class="rounded-2 mt-3 w-75 float-end" style="background-color: #DCF8C6;">
+                <li id="list_messeger"class="border   p-2 list-group-item ">
+                  oi
+                </li>
+            </div>
+            
+            </ul>
+          </div>
+         
+          <div class="input-group  w-100 ">
+            <input
+              id="input_messager"
+              type="text"
+              class="form-control"
+              placeholder="Escreva uma menssagem..."
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+            />
+            <button class="btn btn-success" type="button" id="bt_send_messager">
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script/jquery/Jquery.js"></script>
+    <!-- <script src="../src/app.js" type="module"></script> -->
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBWW_0iM_Ace5w3GKzU1Q9D4YNbgawNL6I",
+        authDomain: "whats-app-clone-a2c50.firebaseapp.com",
+        projectId: "whats-app-clone-a2c50",
+        storageBucket: "whats-app-clone-a2c50.appspot.com",
+        messagingSenderId: "518737294596",
+        appId: "1:518737294596:web:8b672a67645f5b1804cc51",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="service/ServiceDatabase.js"></script>
+    <script src="service/ServiceAuth.js"></script>
+    <script src="model/user.js"></script>
+    <script src="model/Conversa.js"></script>
+    <script src="model/message.js"></script>
+    <!-- <script src="script/home_controller.js"></script> -->
+  </body>
+</html>
